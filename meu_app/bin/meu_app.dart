@@ -247,4 +247,19 @@ var data4 = DateTime.parse("2022-02-01 00:00:00");
 print(data1.isAfter(data4));
 print(data1.isBefore(data4));
 print(data1.compareTo(data4));//Mostra valor 1 positivo quando a data1 `e depois da data4
+
+//ESTRUTURAS CONDICIONAIS E REPETICAO EM DART
+var prova1 = 10;
+var prova2 = 3.5;
+
+var media = (prova1 + prova2) / 2;
+
+if(media >=7) {
+  print("O aluno passou com a nota: $media");
+}else if (media >= 5){
+    print("O aluno esta de recuperacao");
+  }else{
+      print("O aluno reprovou com a nota: $media");
+  }
 }
+
