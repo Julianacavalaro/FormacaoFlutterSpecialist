@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:meu_app/meu_app.dart' as meu_app;
 
 void main(List<String> arguments) {
@@ -159,6 +161,90 @@ print(listInt.where((x) => x > 9 && x< 99));
 print(listInt.reversed);
 //print(listInt.single); //Verifica se so ha um unico elemento e retorna ele]
 
-//
+// Map: tipo de variavel onde podemos armazenar chave(String) e valor(dynamic), depende de como criamos ela
+Map<String, dynamic> map1 = Map<String, dynamic>(); //Map tipado
+//exemplo? chave zero, one, two
+var map = {'zero': 0, 'one': 1, 'two': 2};
+var map2 = {}; //map nao tipado
 
+print(map1);
+print(map);
+
+print("Obtem valor pela chave");
+print(map["one"]);
+
+map.addAll({'ten': 10, "eleven": 11});
+print(map);
+
+print("Se vazio");
+print(map.isNotEmpty);
+print(map1.isEmpty);
+
+print("Tamanho");
+print(map.length);
+
+print("Se Contem chave");
+print(map.containsKey("eleven"));
+print(map.containsKey("teste"));
+
+map1.addAll({"Nome": "Danilo"});
+map1.addAll({"Idade": 39});
+map1.addAll({"Casado": true});
+map1.addAll({"Nascimento": DateTime(1982, 12, 28)});
+print(map1["Nascimento"]);
+
+const String variavel = "ABC";
+const int  variavel2= 123;
+const dynamic a=1;
+print(variavel);
+print(variavel2);
+print(a);
+
+//variavel ="CDE"; //variavel do tipo const nao pode ser alterada
+
+dynamic var1 = "ABC";
+print(var1.length); //dynamic nao tem autocomplete
+
+var1 = 10;
+print(var1);
+var1 = 99.54;
+print(var1);
+
+var1 = true;
+print(var1);
+
+var1 =DateTime(2022,10, 30);
+print(var1);
+
+var1 = [10, true, "A"];
+print(var1);
+
+DateTime data1 = DateTime.now();
+data1 = DateTime.parse("2022-02-02 11:28:57");
+//Partes da data
+print(DateTime.now());
+print(data1);
+print(data1.day);
+print(data1.month);
+print(data1.hour);
+print(data1.day);
+print(data1.minute);
+print(data1.second);
+
+//Dia da semana
+print(data1.weekday); //2 = terca-feira
+
+//Soma de datas
+print(data1);
+DateTime data2 = data1.add(Duration(days: 1));
+print(data1);
+print(data2);
+DateTime data3 = data1.subtract(Duration(hours: 1));
+print(data1);
+print(data3);
+
+var data4 = DateTime.parse("2022-02-01 00:00:00");
+print(data1.isAfter(data4));
+print(data1.isBefore(data4));
+print(data1.compareTo(data4));//Mostra valor 1 positivo quando a data1 `e depois da data4
 }
