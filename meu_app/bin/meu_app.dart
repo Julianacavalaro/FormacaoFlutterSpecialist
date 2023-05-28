@@ -261,5 +261,18 @@ if(media >=7) {
   }else{
       print("O aluno reprovou com a nota: $media");
   }
+
+  //Ternario
+
+  var resultado = "";
+  if( prova1 >= 7){
+    resultado = "O aluno foi aprovado";
+  } else {
+    resultado = "O aluno foi reprovado";
+  }
+  print(resultado);
+
+  var resultadoTernario = (prova1 >= 7) ? "O aluno passou" : "O aluno foi reprovado";
+  print("resultadoTernario:  $resultadoTernario");
 }
 
