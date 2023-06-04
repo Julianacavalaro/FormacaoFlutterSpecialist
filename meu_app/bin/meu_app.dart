@@ -279,27 +279,61 @@ import 'dart:io';
 // }
 
 //Lendo dados do console
-print("Informe a primeira nota: ");
-var line = stdin.readLineSync(encoding: utf8);
+// print("Informe a primeira nota: ");
+// var line = stdin.readLineSync(encoding: utf8);
+// //var prova1 = int.tryParse(line!);
+// var prova1 = int.tryParse(line == null ? "0" : line);
+// //var prova1 = int.tryParse(line ?? "0");// (IGUAL acima!)
+
+// print("Informe a primeira nota: ");
+// var line2 = stdin.readLineSync(encoding: utf8);
+// //var prova1 = int.tryParse(line!);
+// var prova2 = int.tryParse(line2 ?? "0");
+
+
+// var media = (prova1! + prova2!) / 2;
+
+// if(media >=7) {
+//   print("O aluno passou com a nota: $media");
+// }else if (media >= 5){
+//     print("O aluno esta de recuperacao");
+//   }else{
+//       print("O aluno reprovou com a nota: $media");
+//   }
+//   var resultadoTernario = (prova1 >= 7) ? "O aluno passou" : "O aluno foi reprovado";
+//   print("resultadoTernario:  $resultadoTernario");
+
+  //Calculadora
+print("Bem vindos a nossa calculadora");
+print("Informe o primeiro numero:");
+var linee = stdin.readLineSync(encoding: utf8);
 //var prova1 = int.tryParse(line!);
-var prova1 = int.tryParse(line == null ? "0" : line);
-//var prova1 = int.tryParse(line ?? "0");// (IGUAL acima!)
+var numero1 = double.tryParse(linee == null ? "0" : linee);
 
-print("Informe a primeira nota: ");
-var line2 = stdin.readLineSync(encoding: utf8);
-//var prova1 = int.tryParse(line!);
-var prova2 = int.tryParse(line2 == null ? "0" : line2);
+print("Informe o segundo numero:");
+var lineee = stdin.readLineSync(encoding: utf8);
+var numero2 = double.tryParse(lineee == null ? "0" : lineee);
 
+print("Informe a operacao: +, -, /, *");
+var oper = stdin.readLineSync(encoding: utf8);
+var simbolo = (oper == null ? "0" : oper);
 
-var media = (prova1! + prova2!) / 2;
+double resultado = 0.0;
 
-if(media >=7) {
-  print("O aluno passou com a nota: $media");
-}else if (media >= 5){
-    print("O aluno esta de recuperacao");
-  }else{
-      print("O aluno reprovou com a nota: $media");
-  }
-  var resultadoTernario = (prova1 >= 7) ? "O aluno passou" : "O aluno foi reprovado";
-  print("resultadoTernario:  $resultadoTernario");
+if(simbolo == '+'){
+ resultado = (numero1! + numero2!) ;
+ print(resultado);
+}else if(simbolo == '-'){
+   resultado = (numero1! - numero2!) ;
+    print(resultado);
+}else if(simbolo == '/'){
+   resultado = (numero1! / numero2!) ;
+    print(resultado);
+}else if(simbolo == '*'){
+   resultado = (numero1! * numero2!) ;
+} else {
+  print("Operacao invalida");
+  exit(0);
+}
+   print("O resultado da operacao: $simbolo  e: $resultado");
 }
