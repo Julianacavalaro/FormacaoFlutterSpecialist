@@ -1,10 +1,10 @@
- import 'dart:convert';
+import 'dart:convert';
 import 'dart:ffi';
 import 'dart:io';
 
- import 'package:meu_app/meu_app.dart' as meu_app;
+import 'package:meu_app/meu_app.dart' as meu_app;
 
- void main(List<String> arguments) {
+void main(List<String> arguments) {
 //   print('Hello world: ${meu_app.calculate()}');
 //  // print("Retornando true para par e false para impar? ${meu_app.}")
 // double numero1 =10.8;
@@ -23,7 +23,6 @@ import 'dart:io';
 
 // print("Retorna verdadeiro se o numero e finito");
 // print(numero1.isFinite);
-
 
 // print("Retorna verdadeiro se o numero e infinito");
 // print(double.infinity);
@@ -146,7 +145,6 @@ import 'dart:io';
 // print(listString);
 // print(listInt);
 // print(listDynamic);
-
 
 // print(listString.isEmpty);
 // print(listInt.isNotEmpty);
@@ -290,7 +288,6 @@ import 'dart:io';
 // //var prova1 = int.tryParse(line!);
 // var prova2 = int.tryParse(line2 ?? "0");
 
-
 // var media = (prova1! + prova2!) / 2;
 
 // if(media >=7) {
@@ -304,36 +301,126 @@ import 'dart:io';
 //   print("resultadoTernario:  $resultadoTernario");
 
   //Calculadora
-print("Bem vindos a nossa calculadora");
-print("Informe o primeiro numero:");
-var linee = stdin.readLineSync(encoding: utf8);
+  print("Bem vindos a nossa calculadora");
+  print("Informe o primeiro numero:");
+  var linee = stdin.readLineSync(encoding: utf8);
 //var prova1 = int.tryParse(line!);
-var numero1 = double.tryParse(linee == null ? "0" : linee);
+  var numero1 = double.tryParse(linee == null ? "0" : linee);
 
-print("Informe o segundo numero:");
-var lineee = stdin.readLineSync(encoding: utf8);
-var numero2 = double.tryParse(lineee == null ? "0" : lineee);
+  print("Informe o segundo numero:");
+  var lineee = stdin.readLineSync(encoding: utf8);
+  var numero2 = double.tryParse(lineee == null ? "0" : lineee);
 
-print("Informe a operacao: +, -, /, *");
-var oper = stdin.readLineSync(encoding: utf8);
-var simbolo = (oper == null ? "0" : oper);
+  print("Informe a operacao: +, -, /, *");
+  var oper = stdin.readLineSync(encoding: utf8);
+  var simbolo = (oper == null ? "0" : oper);
 
-double resultado = 0.0;
+  double resultado = 0;
 
-if(simbolo == '+'){
- resultado = (numero1! + numero2!) ;
- print(resultado);
-}else if(simbolo == '-'){
-   resultado = (numero1! - numero2!) ;
-    print(resultado);
-}else if(simbolo == '/'){
-   resultado = (numero1! / numero2!) ;
-    print(resultado);
-}else if(simbolo == '*'){
-   resultado = (numero1! * numero2!) ;
-} else {
-  print("Operacao invalida");
-  exit(0);
-}
-   print("O resultado da operacao: $simbolo  e: $resultado");
+  // if (simbolo == '+') {
+  //   resultado = (numero1! + numero2!);
+  //   print(resultado);
+  // } else if (simbolo == '-') {
+  //   resultado = (numero1! - numero2!);
+  //   print(resultado);
+  // } else if (simbolo == '/') {
+  //   resultado = (numero1! / numero2!);
+  //   print(resultado);
+  // } else if (simbolo == '*') {
+  //   resultado = (numero1! * numero2!);
+  // } else {
+  //   print("Operacao invalida");
+  //   exit(0);
+  // }
+  print("O resultado da operacao: $simbolo  e: $resultado");
+  //Switch case (para varias opcoes)
+  double resultado2 = 0;
+  switch (simbolo) {
+    case "+":
+      resultado2 = (numero1! + numero2!);
+      break;
+    case "-":
+      resultado2 = numero1! - numero2!;
+      break;
+    case "/":
+      resultado2 = numero1! / numero2!;
+      break;
+    case "*":
+      resultado2 = numero1! * numero2!;
+      break;
+
+    default:
+      print("Operacao invalida");
+      exit(0);
+  }
+  print("O resultado da operacao: $simbolo  da CALCULADORA e: $resultado2");
+
+  //Lacos de repeticao for
+  var texto = "Meu bloco FOR";
+  for (var i = 0; i <= texto.length - 1; i++) {
+    print(texto[i]);
+  }
+  // var u= 0;
+  // while (u<=99){
+  //   print(u);
+  //   u++;
+
+  // }
+  var listaNomes = ["Danilo", "Matheus", "Thiago"];
+  for (var o = 0; o < listaNomes.length; o++) {
+    print(listaNomes[o]);
+  }
+
+  print("Informe a quantidade de numeros que serao digitados:");
+  var quant = stdin.readLineSync(encoding: utf8);
+  var quantidade = int.tryParse(quant == null ? "0" : quant);
+
+  var soma = 0;
+  for (var u = 0; u <= quantidade! - 1; u++) {
+    print("Informe um numero: ");
+    var nume = stdin.readLineSync(encoding: utf8);
+    var umNumero = int.tryParse(nume == null ? "0" : nume);
+    soma = soma! + umNumero!;
+    print("$u - $soma");
+  }
+  // var soma =0;
+  //     for (var u = 0; u<=  100 ; u++){
+  //       soma = soma + u;
+  //   print("$u - $soma");
+  // }
+  print("Print soma final: $soma");
+
+  //For each For in
+  var numeros = [1, 5, 9, 50, 60, 79];
+  for (var a = 0; a <= numeros.length - 1; a++) {
+    print(numeros[a]);
+  }
+  //igual
+  for (var element in numeros) {
+    print(element);
+  }
+  //igual
+  numeros.forEach((element) {
+    print(element);
+  });
+
+  //while
+  var contador = 0;
+  var total = 10;
+
+  while (contador < total) {
+    contador++;
+    print(contador);
+  }
+  print("Digite um numero ou 'S' para sair");
+  var line = stdin.readLineSync(encoding: utf8);
+  double acumulador = 0;
+
+  while (line != 'S') {
+    print("Digite um numero ou 'S' para sair");
+    var numeroo = double.parse(line ?? "");
+    acumulador = acumulador + numeroo!;
+    line = stdin.readLineSync(encoding: utf8);
+  }
+  print(acumulador);
 }
