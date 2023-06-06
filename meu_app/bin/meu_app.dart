@@ -427,8 +427,9 @@ void main(List<String> arguments) {
   //Do While
    print("Digite um numero ou 'S' para sair");
    var line = stdin.readLineSync(encoding: utf8);
-var numeroo = double.parse(line ?? "");
+//var numeroo = double.parse(line ?? "");
  var  acumulador = 0.0;
+ if(line != 'S'){
   do{
     print("Digite um numero ou 'S' para sair");
     var numeroo = double.parse(line ?? "");
@@ -437,5 +438,6 @@ var numeroo = double.parse(line ?? "");
     }
     line = stdin.readLineSync(encoding: utf8);
   }while(line != 'S');
+ }
   print(acumulador);
 }
