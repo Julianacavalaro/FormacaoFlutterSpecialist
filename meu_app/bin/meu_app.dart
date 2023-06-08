@@ -2,9 +2,19 @@ import 'dart:convert';
 //import 'dart:ffi';
 import 'dart:io';
 
+import 'package:meu_app/functions/functions.dart';
 import 'package:meu_app/meu_app.dart' as meu_app;
 
 void main(List<String> arguments) {
+  printHello();
+
+  int x = 1;
+  int y = 2;
+  print(x/y);
+
+  // var total2 = sum(1, 20);
+  // print(total2);
+ // printName("Juliana");
 //   print('Hello world: ${meu_app.calculate()}');
 //  // print("Retornando true para par e false para impar? ${meu_app.}")
 // double numero1 =10.8;
@@ -425,19 +435,19 @@ void main(List<String> arguments) {
   // print(acumulador);
 
   //Do While
-   print("Digite um numero ou 'S' para sair");
-   var line = stdin.readLineSync(encoding: utf8);
-//var numeroo = double.parse(line ?? "");
- var  acumulador = 0.0;
- if(line != 'S'){
-  do{
-    print("Digite um numero ou 'S' para sair");
-    var numeroo = double.parse(line ?? "");
-    if(numeroo != null){
- acumulador = acumulador + numeroo!;
-    }
-    line = stdin.readLineSync(encoding: utf8);
-  }while(line != 'S');
- }
-  print(acumulador);
+//    print("Digite um numero ou 'S' para sair");
+//    var line = stdin.readLineSync(encoding: utf8);
+// //var numeroo = double.parse(line ?? "");
+//  var  acumulador = 0.0;
+//  if(line != 'S'){
+//   do{
+//     print("Digite um numero ou 'S' para sair");
+//     var numeroo = double.parse(line ?? "");
+//     if(numeroo != null){
+//  acumulador = acumulador + numeroo!;
+//     }
+//     line = stdin.readLineSync(encoding: utf8);
+//   }while(line != 'S');
+//  }
+//   print(acumulador);
 }
