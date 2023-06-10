@@ -2,15 +2,63 @@ import 'dart:convert';
 //import 'dart:ffi';
 import 'dart:io';
 
+import 'package:meu_app/functions/calculator.dart';
 import 'package:meu_app/functions/functions.dart';
-import 'package:meu_app/meu_app.dart' as meu_app;
 
 void main(List<String> arguments) {
+
+  String lerConsole(String texto){
+    print(texto);
+ var linee = stdin.readLineSync(encoding: utf8);
+ return linee ?? "0";
+  }
   printHello();
 
   int x = 1;
   int y = 2;
   print(x/y);
+
+    //Calculadora
+  print("Bem vindos a nossa calculadora");
+//  print("Informe o primeiro numero:");
+ // var linee = stdin.readLineSync(encoding: utf8);
+//var prova1 = int.tryParse(line!);
+ // var numero1 = double.tryParse(linee == null ? "0" : linee);
+    var numero1 = double.tryParse(lerConsole("Informe o primeiro numero:"));
+
+ // print("Informe o segundo numero:");
+ // var lineee = stdin.readLineSync(encoding: utf8);
+  var numero2 = double.tryParse(lerConsole("Informe o segundo numero:"));
+
+ // print("Informe a operacao: +, -, /, *");
+ // var oper = stdin.readLineSync(encoding: utf8);
+//  var simbolo = (oper == null ? "0" : oper);
+  var simbolo = (lerConsole("Informe a operacao: +, -, /, *"));
+
+
+  double resultado2 = 0;
+  switch (simbolo) {
+    case "+":
+   //3  resultado2 = (numero1! + numero2!);
+   resultado2 = soma(numero1!,numero2!);
+      break;
+    case "-":
+      resultado2 = subtracao(numero1!, numero2!);
+      break;
+    case "/":
+      resultado2 = divisao(numero1!, numero2!);
+      break;
+    case "*":
+      resultado2 = multiplicacao(numero1!, numero2!);
+      break;
+
+    default:
+      print("Operacao invalida");
+      exit(0);
+  }
+  //return resultado2;
+  print("O resultado da operacao: $simbolo  da CALCULADORA e: $resultado2");
+
 
   // var total2 = sum(1, 20);
   // print(total2);
@@ -344,26 +392,6 @@ void main(List<String> arguments) {
 //   // }
 //   print("O resultado da operacao: $simbolo  e: $resultado");
 //   //Switch case (para varias opcoes)
-//   double resultado2 = 0;
-//   switch (simbolo) {
-//     case "+":
-//       resultado2 = (numero1! + numero2!);
-//       break;
-//     case "-":
-//       resultado2 = numero1! - numero2!;
-//       break;
-//     case "/":
-//       resultado2 = numero1! / numero2!;
-//       break;
-//     case "*":
-//       resultado2 = numero1! * numero2!;
-//       break;
-
-//     default:
-//       print("Operacao invalida");
-//       exit(0);
-//   }
-//   print("O resultado da operacao: $simbolo  da CALCULADORA e: $resultado2");
 
 //   //Lacos de repeticao for
 //   var texto = "Meu bloco FOR";
