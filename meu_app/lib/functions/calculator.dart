@@ -3,7 +3,7 @@ import 'dart:io';
 
 // class calculadora{
 void calcular(double numero1, double numero2, String simbolo) {
-  print("Bem vindos a nossa calculadora");
+
 //  print("Informe o primeiro numero:");
   // var linee = stdin.readLineSync(encoding: utf8);
 //var prova1 = int.tryParse(line!);
@@ -47,6 +47,20 @@ void calcular(double numero1, double numero2, String simbolo) {
   }
   //return resultado2;
   print("O resultado da operacao: $simbolo  da CALCULADORA e: $resultado2");
+
+}
+double lerConsoleDouble(String texto){
+  var line = lerConsole(texto);
+  return double.parse(line);
+}
+double? lerConsoleDoubleEvolution(String texto){
+  var numero = lerConsole(texto);
+  if(numero == null) {
+    return 0.0;
+  } else {
+  return double.tryParse(numero);
+
+  }
 }
 
 String lerConsole(String texto) {

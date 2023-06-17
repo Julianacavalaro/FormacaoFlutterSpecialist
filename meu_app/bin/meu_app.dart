@@ -14,15 +14,18 @@ void main(List<String> arguments) {
   int y = 2;
   print(x/y);
 
+  print("Bem vindos a nossa calculadora");
+//var numero1 = double.tryParse(lerConsole("Informe o primeiro numero:"));
 
-var numero1 = double.tryParse(lerConsole("Informe o primeiro numero:"));
+var numero1 = lerConsoleDouble("Informe o primeiro numero:");
 
-  var numero2 = double.tryParse(lerConsole("Informe o segundo numero:"));
+  var numero2 = lerConsoleDouble("Informe o segundo numero:");
 
   var simbolo = (lerConsole("Informe a operacao: +, -, /, *"));
 
     calcular(numero1!, numero2!, simbolo);
  
+
 
   // var total2 = sum(1, 20);
   // print(total2);
