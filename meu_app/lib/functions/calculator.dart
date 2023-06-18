@@ -49,34 +49,6 @@ void calcular(double numero1, double numero2, String simbolo) {
   print("O resultado da operacao: $simbolo  da CALCULADORA e: $resultado2");
 
 }
-double lerConsoleDouble(String texto){
-  var line = lerConsole(texto);
-  return double.parse(line);
-}
-double? lerConsoleDoubleEvolution(String texto){
-  var numero = lerConsole(texto);
-  if(numero == null) {
-    return 0.0;
-  } else {
-  return double.tryParse(numero);
-
-  }
-}
-
-String lerConsole(String texto) {
-  print(texto);
-  var linee = stdin.readLineSync(encoding: utf8);
-  return linee ?? "0";
-}
-
-double lerconsoleDouble(String texto) {
-  var line = lerConsole(texto);
-  return double.parse(line);
-}
-
-void printName(String name) {
-  print("My name is: $name");
-}
 
 int returnNumero() {
   return 30;

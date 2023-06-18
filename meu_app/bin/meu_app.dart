@@ -1,9 +1,11 @@
 import 'dart:convert';
 //import 'dart:ffi';
+
 import 'dart:io';
 
 import 'package:meu_app/functions/calculator.dart';
 import 'package:meu_app/functions/functions.dart';
+import 'package:meu_app/functions/utils.dart';
 
 void main(List<String> arguments) {
 
@@ -25,7 +27,45 @@ var numero1 = lerConsoleDouble("Informe o primeiro numero:");
 
     calcular(numero1!, numero2!, simbolo);
  
+ // //WHILE SOMENTE
 
+  //   print("Digite um numero ou 'S' para sair");
+  //  var line = stdin.readLineSync(encoding: utf8);
+
+   var linee = lerConsole("Digite um numero ou 'S' para sair");
+  double acumulador = 0;
+  List<double> numeros = [];
+  while (linee != 'S') {
+    print("Digite um numero ou 'S' para sair");
+     //var line = lerConsole("Digite um numero ou 'S' para sair");
+
+   // var numeroo = double.parse(linee ?? "");
+    numeros.add(double.parse(linee ?? ""));
+   // acumulador = acumulador + numeroo;
+    linee = stdin.readLineSync(encoding: utf8)!;
+  }
+  print(acumulador); 
+    print(numeros);
+  print(somaLista(numeros));
+
+
+
+//  //Do While
+//   // print("Digite um numero ou 'S' para sair");
+//    var line = lerConsole("Digite um numero ou 'S' para sair");
+// //var numeroo = double.parse(line ?? "");
+//  var  acumulador = 0.0;
+//  if(line != 'S'){
+//   do{
+//     print("Digite um numero ou 'S' para sair");
+//     var numeroo = double.parse(line ?? "");
+//     if(numeroo != null){
+//  acumulador = acumulador + numeroo!;
+//     }
+//     line = lerConsole("");
+//   }while(line != 'S');
+//  }
+//   print(acumulador);
 
   // var total2 = sum(1, 20);
   // print(total2);
@@ -417,32 +457,6 @@ var numero1 = lerConsoleDouble("Informe o primeiro numero:");
 //     contador++;
 //     print(contador);
 //   }
-   //print("Digite um numero ou 'S' para sair");
-   //var line = stdin.readLineSync(encoding: utf8);
-  // double acumulador = 0;
 
-  // while (line != 'S') {
-  //   print("Digite um numero ou 'S' para sair");
-  //   var numeroo = double.parse(line ?? "");
-  //   acumulador = acumulador + numeroo!;
-  //   line = stdin.readLineSync(encoding: utf8);
-  // }
-  // print(acumulador);
-
-  //Do While
-//    print("Digite um numero ou 'S' para sair");
-//    var line = stdin.readLineSync(encoding: utf8);
-// //var numeroo = double.parse(line ?? "");
-//  var  acumulador = 0.0;
-//  if(line != 'S'){
-//   do{
-//     print("Digite um numero ou 'S' para sair");
-//     var numeroo = double.parse(line ?? "");
-//     if(numeroo != null){
-//  acumulador = acumulador + numeroo!;
-//     }
-//     line = stdin.readLineSync(encoding: utf8);
-//   }while(line != 'S');
-//  }
-//   print(acumulador);
+ 
 }
