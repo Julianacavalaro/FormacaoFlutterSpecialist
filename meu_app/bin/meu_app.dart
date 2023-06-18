@@ -16,37 +16,54 @@ void main(List<String> arguments) {
   int y = 2;
   print(x/y);
 
-  print("Bem vindos a nossa calculadora");
-//var numero1 = double.tryParse(lerConsole("Informe o primeiro numero:"));
+ //Funcao recursiva
+ var fatCalculado = fatorial(10);
+ print(fatCalculado);
+}
+int fatorial(int numero){
+  if(numero == 1 ){
+    return 1;
+  }
+  return numero * fatorial(numero - 1);
+}
 
-var numero1 = lerConsoleDouble("Informe o primeiro numero:");
+//   print("Bem vindos a nossa calculadora");
+// //var numero1 = double.tryParse(lerConsole("Informe o primeiro numero:"));
 
-  var numero2 = lerConsoleDouble("Informe o segundo numero:");
+// var numero1 = lerConsoleDouble("Informe o primeiro numero:");
 
-  var simbolo = (lerConsole("Informe a operacao: +, -, /, *"));
+//   var numero2 = lerConsoleDouble("Informe o segundo numero:");
 
-    calcular(numero1!, numero2!, simbolo);
+//   var simbolo = (lerConsole("Informe a operacao: +, -, /, *"));
+
+//     calcular(numero1!, numero2!, simbolo);
  
  // //WHILE SOMENTE
 
   //   print("Digite um numero ou 'S' para sair");
   //  var line = stdin.readLineSync(encoding: utf8);
 
-   var linee = lerConsole("Digite um numero ou 'S' para sair");
-  double acumulador = 0;
-  List<double> numeros = [];
-  while (linee != 'S') {
-    print("Digite um numero ou 'S' para sair");
-     //var line = lerConsole("Digite um numero ou 'S' para sair");
+  //  var linee = lerConsole("Digite um numero ou 'S' para sair");
+  // double acumulador = 0;
+  // List<double> numeros = [];
+  // while (linee != 'S') {
+  //   print("Digite um numero ou 'S' para sair");
+  //    //var line = lerConsole("Digite um numero ou 'S' para sair");
 
-   // var numeroo = double.parse(linee ?? "");
-    numeros.add(double.parse(linee ?? ""));
-   // acumulador = acumulador + numeroo;
-    linee = stdin.readLineSync(encoding: utf8)!;
-  }
-  print(acumulador); 
-    print(numeros);
-  print(somaLista(numeros));
+  //  // var numeroo = double.parse(linee ?? "");
+  //   numeros.add(double.parse(linee ?? ""));
+  //  // acumulador = acumulador + numeroo;
+  //   linee = stdin.readLineSync(encoding: utf8)!;
+  // }
+  // print(acumulador); 
+  //   print(numeros);
+  // print(somaLista(numeros));
+ 
+
+
+
+
+
 
 
 
@@ -459,4 +476,4 @@ var numero1 = lerConsoleDouble("Informe o primeiro numero:");
 //   }
 
  
-}
+

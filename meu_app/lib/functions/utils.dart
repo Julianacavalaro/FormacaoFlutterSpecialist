@@ -1,26 +1,27 @@
 import 'dart:convert';
 import 'dart:io';
 
-double lerConsoleDouble(String texto){
+double lerConsoleDouble(String texto) {
   var line = lerConsole(texto);
   return double.parse(line);
 }
-double? lerConsoleDoubleEvolution(String texto){
+
+double? lerConsoleDoubleEvolution(String texto) {
   var numero = lerConsole(texto);
-  if(numero == null) {
+  if (numero == null) {
     return 0.0;
   } else {
-  return double.tryParse(numero);
-
+    return double.tryParse(numero);
   }
 }
- double somaLista(List<double> numeros){
-double acumulator =0;
-for(var numero in numeros) {
-  acumulator = acumulator + numero;
+
+double somaLista(List<double> numeros) {
+  double acumulator = 0;
+  for (var numero in numeros) {
+    acumulator = acumulator + numero;
+  }
+  return acumulator;
 }
-return acumulator;
- }
 
 String lerConsole(String texto) {
   print(texto);
@@ -35,4 +36,17 @@ double lerconsoleDouble(String texto) {
 
 void printName(String name) {
   print("My name is: $name");
+}
+
+int fatorial(int num) {
+  int resultado = 1;
+  double? num =
+      lerConsoleDoubleEvolution("Digite um numero para o calculo do fatorial");
+  for (int i = 1; i <= num!; i++) {
+    resultado = resultado * i;
+//
+  }
+    print(resultado);
+  return resultado;
+
 }
