@@ -9,6 +9,10 @@ import 'package:meu_app/functions/utils.dart';
 
 void main(List<String> arguments) {
 
+printData("9  de dezembro");
+//printData(soma(1,2) as String); // nao funcionou
+printData(soma(1,2).toString());
+
 
   printHello();
 
@@ -28,6 +32,9 @@ int fatorial(int numero){
   }
   return numero * fatorial(numero - 1);
 }
+//ARROW function
+void printData(String data) => print(data);
+int soma(int  numero1, int numero2) => numero1 + numero2;
 
 //Parametros opcionais
 void printName(String name,{ String surname = "" } ){
