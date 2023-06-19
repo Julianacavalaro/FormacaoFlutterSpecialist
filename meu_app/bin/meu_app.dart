@@ -9,6 +9,10 @@ import 'package:meu_app/functions/utils.dart';
 
 void main(List<String> arguments) {
 
+print(incrementar(10));
+print(decrementar(10));
+print(executar(10, incrementar));
+
 printData("9  de dezembro");
 //printData(soma(1,2) as String); // nao funcionou
 printData(soma(1,2).toString());
@@ -32,6 +36,17 @@ int fatorial(int numero){
   }
   return numero * fatorial(numero - 1);
 }
+//Funcoes que aceitam funcoes como parametro
+int incrementar(int num){
+  return num +1;
+}
+int decrementar(int num){
+  return num -1;
+}
+int executar(int num, Function func){
+  return func(num);
+}
+
 //ARROW function
 void printData(String data) => print(data);
 int soma(int  numero1, int numero2) => numero1 + numero2;
