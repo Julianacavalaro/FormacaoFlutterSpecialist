@@ -16,6 +16,8 @@ void main(List<String> arguments) {
   int y = 2;
   print(x/y);
 
+printName("Juliana", surname: "Cavalaro");
+
  //Funcao recursiva
  var fatCalculado = fatorial(10);
  print(fatCalculado);
@@ -25,6 +27,12 @@ int fatorial(int numero){
     return 1;
   }
   return numero * fatorial(numero - 1);
+}
+
+//Parametros opcionais
+void printName(String name,{ String surname = "" } ){
+  print("My name is $name");
+    print("My surname is $surname");
 }
 
 //   print("Bem vindos a nossa calculadora");
