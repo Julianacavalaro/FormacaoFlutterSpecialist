@@ -16,6 +16,14 @@ class Pessoa {
   String getNome() {
     return _nome.toUpperCase();
   }
+
+  @override
+  String toString(){
+    return{
+      "Nome": _nome,
+      "Endereco": _endereco,
+    }.toString();
+  }
   // Pessoa({
   //   required this.nome,
   //   required this.endereco,

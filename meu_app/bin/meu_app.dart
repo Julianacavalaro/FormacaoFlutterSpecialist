@@ -15,6 +15,8 @@ void main(List<String> arguments) {
   p1.setEndereco("Rua 1");
   print(p1.getNome());
   print(p1.getEndereco());
+    print(p1); // Instance of 'Pessoa'
+
 
 print(incrementar(10));
 print(decrementar(10));
