@@ -3,11 +3,18 @@ import 'dart:convert';
 
 import 'dart:io';
 
+import 'package:meu_app/classes/Pessoa.dart';
 import 'package:meu_app/functions/calculator.dart';
 import 'package:meu_app/functions/functions.dart';
 import 'package:meu_app/functions/utils.dart';
 
 void main(List<String> arguments) {
+
+  var p1 = new Pessoa();
+  p1.setNome("Juliana");
+  p1.setEndereco("Rua 1");
+  print(p1.getNome());
+  print(p1.getEndereco());
 
 print(incrementar(10));
 print(decrementar(10));
