@@ -24,9 +24,8 @@ class Pessoa {
       "Endereco": _endereco,
     }.toString();
   }
-  // Pessoa({
-  //   required this.nome,
-  //   required this.endereco,
-  // });
+  Pessoa(String nome, String endereco){
+    _nome = nome;
+    _endereco = endereco;  }
 
 }

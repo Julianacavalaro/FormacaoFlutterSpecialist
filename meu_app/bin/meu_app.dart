@@ -4,18 +4,30 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:meu_app/classes/Pessoa.dart';
+import 'package:meu_app/classes/PessoaFisica.dart';
+import 'package:meu_app/classes/PessoaJuridica.dart';
+//import 'package:meu_app/classes/PessoaFisica.dart';
 import 'package:meu_app/functions/calculator.dart';
 import 'package:meu_app/functions/functions.dart';
 import 'package:meu_app/functions/utils.dart';
 
 void main(List<String> arguments) {
 
-  var p1 = new Pessoa();
+
+  var p1 = new Pessoa("","");
   p1.setNome("Juliana");
   p1.setEndereco("Rua 1");
   print(p1.getNome());
   print(p1.getEndereco());
     print(p1); // Instance of 'Pessoa'
+
+      var pessoaJu = PessoaJuridica("","","");
+print(pessoaJu);
+
+
+var pessoaFisica = new PessoaFisica("","","");
+print(pessoaFisica);
+
 
 
 print(incrementar(10));
