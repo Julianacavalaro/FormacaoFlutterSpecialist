@@ -3,79 +3,77 @@ import 'dart:convert';
 
 import 'dart:io';
 
-import 'package:meu_app/classes/Pessoa.dart';
-import 'package:meu_app/classes/PessoaFisica.dart';
-import 'package:meu_app/classes/PessoaJuridica.dart';
+import 'package:meu_app/classes/pessoa.dart';
+import 'package:meu_app/classes/pessoa_fisica.dart';
+import 'package:meu_app/classes/pesso_juridica.dart';
 //import 'package:meu_app/classes/PessoaFisica.dart';
 import 'package:meu_app/functions/calculator.dart';
 import 'package:meu_app/functions/functions.dart';
 import 'package:meu_app/functions/utils.dart';
 
 void main(List<String> arguments) {
+  // var p1 =  Pessoa("","");
+  // p1.setNome("Juliana");
+  // p1.setEndereco("Rua 1");
+  // print(p1.getNome());
+  // print(p1.getEndereco());
+  //   print(p1); // Instance of 'Pessoa'
 
+  var pessoaJu = PessoaJuridica("nome", "endereco", "cnpf");
+  print(pessoaJu);
 
-  var p1 = new Pessoa("","");
-  p1.setNome("Juliana");
-  p1.setEndereco("Rua 1");
-  print(p1.getNome());
-  print(p1.getEndereco());
-    print(p1); // Instance of 'Pessoa'
+  var pessoaFisica = new PessoaFisica("", "", "");
+  print(pessoaFisica);
 
-      var pessoaJu = PessoaJuridica("","","");
-print(pessoaJu);
+  print(incrementar(10));
+  print(decrementar(10));
+  print(executar(10, incrementar));
 
-
-var pessoaFisica = new PessoaFisica("","","");
-print(pessoaFisica);
-
-
-
-print(incrementar(10));
-print(decrementar(10));
-print(executar(10, incrementar));
-
-printData("9  de dezembro");
+  printData("9  de dezembro");
 //printData(soma(1,2) as String); // nao funcionou
-printData(soma(1,2).toString());
-
+  printData(soma(1, 2).toString());
 
   printHello();
 
   int x = 1;
   int y = 2;
-  print(x/y);
+  print(x / y);
 
-printName("Juliana", surname: "Cavalaro");
+  printName("Juliana", surname: "Cavalaro");
 
- //Funcao recursiva
- var fatCalculado = fatorial(10);
- print(fatCalculado);
+  //Funcao recursiva
+  var fatCalculado = fatorial(10);
+  print(fatCalculado);
 }
-int fatorial(int numero){
-  if(numero == 1 ){
+
+int fatorial(int numero) {
+  if (numero == 1) {
     return 1;
   }
   return numero * fatorial(numero - 1);
 }
+
 //Funcoes que aceitam funcoes como parametro
-int incrementar(int num){
-  return num +1;
+int incrementar(int num) {
+  return num + 1;
 }
-int decrementar(int num){
-  return num -1;
+
+int decrementar(int num) {
+  return num - 1;
 }
-int executar(int num, Function func){
+
+int executar(int num, Function func) {
   return func(num);
 }
 
 //ARROW function
 void printData(String data) => print(data);
-int soma(int  numero1, int numero2) => numero1 + numero2;
+int soma(int numero1, int numero2) => numero1 + numero2;
 
 //Parametros opcionais
-void printName(String name,{ String surname = "" } ){
+void printName(String name, {String surname = ""}) {
   print("My name is $name");
-    print("My surname is $surname");
+  print("My surname is $surname");
 }
 
 //   print("Bem vindos a nossa calculadora");

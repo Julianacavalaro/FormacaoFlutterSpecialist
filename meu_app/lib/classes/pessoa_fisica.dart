@@ -1,9 +1,9 @@
-import 'package:meu_app/classes/Pessoa.dart';
+import 'package:meu_app/classes/pessoa.dart';
 
-class PessoaJuridica extends Pessoa {
+class PessoaFisica extends Pessoa{
   // String _nome = "";
   // String _endereco = "";
-  String _cnpj= "";
+  String _cpf = "";
 
   // void setNome(String nome) {
   //   this._nome = nome;
@@ -21,26 +21,25 @@ class PessoaJuridica extends Pessoa {
   //   return _nome.toUpperCase();
   // }
 
-  void setCnpj(String cnpj) {
-    this._cnpj = cnpj;
-  }
+  // void setCpf(String cpf) {
+  //   this._cpf = cpf;
+  // }
 
-  String getCnpj() {
-    return _cnpj;
-  }
+  // String getCpf() {
+  //   return _cpf;
+  // }
   @override
   String toString() {
     return {
-      "Nome": super.getNome(),
-      "Endereco": super.getEndereco(),
-      "cnpj": _cnpj,
+      "Nome": getNome(),
+      "Endereco": getEndereco(),
+      "Cpf": _cpf,
     }.toString();
   }
 
-  PessoaJuridica(String nome, String endereco, String cnpj) : 
-  super(nome, endereco) {
+  PessoaFisica(String nome, String endereco, String cpf) : super(nome, endereco) {
     // _nome = nome;
     // _endereco = endereco;
-    _cnpj = cnpj;
+    _cpf = cpf;
   }
 }
