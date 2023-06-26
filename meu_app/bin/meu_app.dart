@@ -3,9 +3,10 @@ import 'dart:convert';
 
 import 'dart:io';
 
-import 'package:meu_app/classes/pessoa.dart';
+import 'package:meu_app/classes/pessoa_abstract.dart';
 import 'package:meu_app/classes/pessoa_fisica.dart';
 import 'package:meu_app/classes/pesso_juridica.dart';
+import 'package:meu_app/enum/tipo_notificacao.dart';
 //import 'package:meu_app/classes/PessoaFisica.dart';
 import 'package:meu_app/functions/calculator.dart';
 import 'package:meu_app/functions/functions.dart';
@@ -19,10 +20,10 @@ void main(List<String> arguments) {
   // print(p1.getEndereco());
   //   print(p1); // Instance of 'Pessoa'
 
-  var pessoaJu = PessoaJuridica("nome", "endereco", "cnpf");
+  var pessoaJu = PessoaJuridica("nome", "endereco", "cnpf", tipoNotificacao: TipoNotificacao.EMAIL);
   print(pessoaJu);
 
-  var pessoaFisica = new PessoaFisica("", "", "");
+  var pessoaFisica =  PessoaFisica("A", "A", "A");
   print(pessoaFisica);
 
   print(incrementar(10));
