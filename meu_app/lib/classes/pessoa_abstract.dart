@@ -4,17 +4,44 @@ abstract class Pessoa {
  
   String _nome = "";
   String _endereco = "";
+  String _email = "";
+  String _celular = "";
+  String _token = "";
   TipoNotificacao _tipoNotificacao = TipoNotificacao.NENHUM;
 
   void setNome(String nome) {
     this._nome = nome;
   }
-    void setEndereco(String endereco) {
+
+      void setEndereco(String endereco) {
     this._endereco = endereco;
   }
 
   String getEndereco(){
     return _endereco ;
+  }
+
+      void setCelular(String celular) {
+    this._celular = celular;
+  }
+
+  String getCelular(){
+    return _celular ;
+  }
+
+      void setEmail(String email) {
+    this._email = email;
+  }
+
+  String getEmail(){
+    return _email ;
+  }
+    void setToken(String token) {
+    this._token = token;
+  }
+
+  String getToken(){
+    return _token ;
   }
 
   void setTipoNotificacao(TipoNotificacao tipoNotificacao){
