@@ -11,8 +11,19 @@ import 'package:meu_app/enum/tipo_notificacao.dart';
 import 'package:meu_app/functions/calculator.dart';
 import 'package:meu_app/functions/functions.dart';
 import 'package:meu_app/functions/utils.dart';
+import 'package:meu_app/service/EnviarNotificacao.dart';
 
 void main(List<String> arguments) {
+  var pessoaJu = PessoaJuridica("Empresa 1", "endereco", "cnpf", tipoNotificacao: TipoNotificacao.EMAIL);
+  print(pessoaJu);
+
+  var pessoaFisica =  PessoaFisica("Ana", "A", "A", tipoNotificacao: TipoNotificacao.PUSH_NOTIFICATION);
+  print(pessoaFisica);
+
+  EnviarNotificacao enviarNotificacao = EnviarNotificacao();
+
+  enviarNotificacao.notificar(pessoaFisica);
+    enviarNotificacao.notificar(pessoaJu);
   // var p1 =  Pessoa("","");
   // p1.setNome("Juliana");
   // p1.setEndereco("Rua 1");
@@ -20,11 +31,7 @@ void main(List<String> arguments) {
   // print(p1.getEndereco());
   //   print(p1); // Instance of 'Pessoa'
 
-  var pessoaJu = PessoaJuridica("nome", "endereco", "cnpf", tipoNotificacao: TipoNotificacao.EMAIL);
-  print(pessoaJu);
-
-  var pessoaFisica =  PessoaFisica("A", "A", "A");
-  print(pessoaFisica);
+ 
 
   print(incrementar(10));
   print(decrementar(10));
