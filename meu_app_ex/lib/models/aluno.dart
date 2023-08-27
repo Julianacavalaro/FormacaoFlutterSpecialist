@@ -2,9 +2,10 @@ class Aluno {
   String _nome = "";
   final List<double> _notas = [];
 
-  Aluno(String nome) {
-    _nome = nome;
-  }
+  // Aluno(String nome) {
+  //   _nome = nome;
+  // } e igual a (abaixo)
+  Aluno(this._nome);
 
   void setNome(String nome) {
     _nome = nome;
@@ -26,10 +27,10 @@ class Aluno {
 
   double retornaMedia() {
     var totalNotas = 0.0;
-
-    for (var nota in _notas) {
-      totalNotas = totalNotas + nota;
-    }
+   totalNotas = _notas.reduce((value, element) => value + element); // e igual abaixo = (Soma o valor aterior com o atual) soma a lista
+    // for (var nota in _notas) {
+    //   totalNotas = totalNotas + nota;
+    // }
     var media = totalNotas / _notas.length;
     return media.isNaN ? 0 : media;
   }

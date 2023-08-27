@@ -11,7 +11,7 @@ void execute() {
   if(nome.trim() == ""){
     throw NomeInvalidoException();
   }
-  } catch (NomeInvalidoException){
+  } on NomeInvalidoException{
      nome = "nome padrao";
      print(NomeInvalidoException);
      exit(0);
